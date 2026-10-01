@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   ⚡ ENGINEERED BY ZEKMOS (MOSES ZEKRUMAH)
+   Bridging complex systems and human-centered design.
+   Official Hub: https://zekmoscodehub.github.io/portfolio/
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism UI Component Playground</title>
+    
+    <!-- Ownership & Metadata -->
+    <meta name="author" content="Moses Zekrumah (Zekmos)">
+    <meta name="designer" content="Zekmos Code Hub">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>">
+    
+    <!-- Social Discovery & Verification Link Previews -->
+    <meta property="og:site_name" content="Zekmos Dev Sandbox">
+    <meta property="og:title" content="Glassmorphism UI Component Playground">
+    <meta property="og:see_also" content="https://zekmoscodehub.github.io/portfolio/">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background decorative ambient shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- Custom Branding Header Section -->
+    <header class="glass-header">
+        <div class="header-logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">Zekmos <span class="text-accent">Sandbox</span></span>
+        </div>
+        <nav class="header-nav">
+            <a href="https://zekmoscodehub.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="nav-link">Main Portfolio</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Workspace Container -->
+    <main class="playground-container">
+        <!-- Control Panel (Left Side) -->
+        <section class="panel control-panel">
+            <h2>UI Customizer</h2>
+            <p class="panel-subtitle">Optimize inputs to generate your CSS code</p>
+            
+            <div class="control-group">
+                <label>Glass Style</label>
+                <div class="badge-container">
+                    <span class="badge active" data-style="frosted">Frosted Clear</span>
+                    <span class="badge" data-style="vibrant">Vibrant Glow</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Simulated Preview Code</label>
+                <pre class="code-box"><code>backdrop-filter: blur(14px);
+background: rgba(255, 255, 255, 0.07);
+border: 1px solid rgba(255, 255, 255, 0.15);</code></pre>
+            </div>
+            
+            <button class="btn-copy">Copy CSS Code</button>
+        </section>
+
+        <!-- Live Visual Preview (Right Side) -->
+        <section class="panel preview-panel">
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="user-avatar"></div>
+                    <div>
+                        <h3>Moses Zekrumah</h3>
+                        <p>Interface Designer</p>
+                    </div>
+                </div>
+                <p class="card-body">
+                    "Glassmorphism combines frosted glass texture, vibrant background shapes, and subtle borders to create deep user experiences."
+                </p>
+                <div class="card-footer">
+                    <span class="tag">#CSS3</span>
+                    <span class="tag">#UI_UX</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Customized Institutional Footer Section -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <p class="footer-brand">
+                <span class="brand-icon">⚡</span> 
+                <strong>Zekmos Code Hub</strong>
+            </p>
+            <p class="footer-tagline">Engineering high-performance digital architectures.</p>
+            
+            <div class="footer-links">
+                <a href="https://zekmoscodehub.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+                    <span>View Portfolio</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Moses Zekrumah. All rights engineered under responsive systems.</p>
+        </div>
+    </footer>
+
+    <!-- Script Automation Logic -->
+    <script>
+        // --- 1. Clipboard Copy Logic ---
+        const copyBtn = document.querySelector('.btn-copy');
+        const codeElement = document.querySelector('.code-box code');
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                const cssText = codeElement.innerText;
+                await navigator.clipboard.writeText(cssText);
+                
+                copyBtn.innerText = "✓ Code Copied!";
+                copyBtn.style.background = "#2ecc71"; 
+                
+                setTimeout(() => {
+                    copyBtn.innerText = "Copy CSS Code";
+                    copyBtn.style.background = "#3b82f6"; 
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        });
+
+        // --- 2. Interactive Style Switcher Logic ---
+        const badges = document.querySelectorAll('.badge');
+        const glassCard = document.querySelector('.glass-card');
+
+        const styles = {
+            frosted: {
+                background: "rgba(255, 255, 255, 0.07)",
+                blur: "blur(14px)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                code: `backdrop-filter: blur(14px);\nbackground: rgba(255, 255, 255, 0.07);\nborder: 1px solid rgba(255, 255, 255, 0.15);`
+            },
+            vibrant: {
+                background: "rgba(236, 72, 153, 0.15)",
+                blur: "blur(25px)",
+                border: "1px solid rgba(236, 72, 153, 0.4)",
+                code: `backdrop-filter: blur(25px);\nbackground: rgba(236, 72, 153, 0.15);\nborder: 1px solid rgba(236, 72, 153, 0.4);`
+            }
+        };
+
+        badges.forEach(badge => {
+            badge.addEventListener('click', () => {
+                badges.forEach(b => b.classList.remove('active'));
+                badge.classList.add('active');
+
+                const chosenStyle = badge.getAttribute('data-style');
+                const data = styles[chosenStyle];
+
+                glassCard.style.background = data.background;
+                glassCard.style.backdropFilter = data.blur;
+                glassCard.style.webkitBackdropFilter = data.blur; 
+                glassCard.style.border = data.border;
+
+                codeElement.innerText = data.code;
+            });
+        });
+    </script>
+</body>
+</html>
