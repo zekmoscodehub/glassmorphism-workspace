@@ -1,4 +1,4 @@
-/* Custom Design Tokens & Variables */
+ /* Custom Design Tokens & Variables */
 :root {
     --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     --accent-pink: #ec4899;
@@ -25,11 +25,12 @@ body {
     background: var(--bg-gradient);
     color: var(--text-primary);
     min-height: 100vh;
-    display: flex;
     flex-direction: column; /* Vertical flow tracking for Header -> Main -> Footer */
     align-items: center;
     overflow-x: hidden;
     position: relative;
+    display: flex;
+    
 }
 
 /* Background Ambient Blur Shapes */
